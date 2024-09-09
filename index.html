@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrador de Tienda Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Filtrador de Productos</h1>
+    </header>
+
+    <main>
+        <section class="filter">
+            <h2>Filtrar Productos</h2>
+            <form id="filter-form">
+                <div class="filter-group">
+                    <label for="brand">Marca:</label>
+                    <select id="brand" name="brand">
+                        <option value="">Todas</option>
+                        <option value="marca1">Marca 1</option>
+                        <option value="marca2">Marca 2</option>
+                        <!-- Agrega más marcas según sea necesario -->
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="price">Precio:</label>
+                    <select id="price" name="price">
+                        <option value="">Todos</option>
+                        <option value="0-50">Hasta $50</option>
+                        <option value="51-100">$51 - $100</option>
+                        <option value="101-200">$101 - $200</option>
+                        <option value="201-500">$201 - $500</option>
+                        <option value="500+">Más de $500</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="rating">Calificación:</label>
+                    <select id="rating" name="rating">
+                        <option value="">Todas</option>
+                        <option value="1">1 estrella</option>
+                        <option value="2">2 estrellas</option>
+                        <option value="3">3 estrellas</option>
+                        <option value="4">4 estrellas</option>
+                        <option value="5">5 estrellas</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="gender">Género:</label>
+                    <select id="gender" name="gender">
+                        <option value="">Todos</option>
+                        <option value="men">Hombres</option>
+                        <option value="women">Mujeres</option>
+                        <option value="unisex">Unisex</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="type">Tipo:</label>
+                    <select id="type" name="type">
+                        <option value="">Todos</option>
+                        <option value="shoes">Zapatos</option>
+                        <option value="clothing">Ropa</option>
+                        <option value="accessories">Accesorios</option>
+                        <!-- Agrega más tipos según sea necesario -->
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="size">Talla:</label>
+                    <select id="size" name="size">
+                        <option value="">Todas</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                        <!-- Agrega más tallas según sea necesario -->
+                    </select>
+                </div>
+
+                <button type="submit">Filtrar</button>
+            </form>
+        </section>
+
+        <section class="product-list">
+            <h2>Lista de Productos</h2>
+            <div id="product-container">
+                <!-- Los productos filtrados se mostrarán aquí -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
