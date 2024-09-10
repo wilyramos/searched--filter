@@ -16,3 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// selects 
+
+const brand = document.querySelector('#brand');
+const price = document.querySelector('#price');
+const year = document.querySelector('#rating');
+const gender = document.querySelector('#gender');
+const type = document.querySelector('#type');
+const size = document.querySelector('#size');
+
+
+
+console.log(brand);
