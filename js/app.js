@@ -28,5 +28,32 @@ const type = document.querySelector('#type');
 const size = document.querySelector('#size');
 
 
+// data for the search
+
+const dataSearch = {
+    brand: '',
+    price: '',
+    year: '',
+    gender: '',
+    type: '',
+    size: ''
+}
+
+// event listeners
+
+document.addEventListener('DOMContentLoaded', () => {
+    brand.addEventListener('input', e => {
+        dataSearch.brand = e.target.value;
+    });
+
+    price.addEventListener('input', e => {
+        dataSearch.price = e.target.value;
+    });
+
+    year.addEventListener('input', e => {
+        dataSearch.year = e.target.value;
+    });
+});
+
 
 console.log(brand);
