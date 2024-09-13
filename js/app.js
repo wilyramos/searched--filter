@@ -27,6 +27,10 @@ const gender = document.querySelector('#gender');
 const type = document.querySelector('#type');
 const size = document.querySelector('#size');
 
+const listproducts = document.querySelector('#list-products');
+
+
+
 
 // data for the search
 
@@ -39,7 +43,7 @@ const dataSearch = {
     size: ''
 }
 
-// event listeners
+// event listeners xxx
 
 document.addEventListener('DOMContentLoaded', () => {
     brand.addEventListener('input', e => {
@@ -53,7 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
     year.addEventListener('input', e => {
         dataSearch.year = e.target.value;
     });
+
 });
 
 
+function showProducts(){
+    // const listproducts = document.querySelector('#list-products');
+    
+    
+}
+
+function clearHTML(){
+
+    while(listproducts.firstChild){
+        listproducts.removeChild(listproducts.firstChild);
+    }
+    
+}
 console.log(brand);
