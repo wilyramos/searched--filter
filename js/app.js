@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function showProducts(){
     // const listproducts = document.querySelector('#list-products');
-    
+    clearHTML();
     
 }
 
