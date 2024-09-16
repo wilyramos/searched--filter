@@ -58,8 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function showProducts() {
-    // const listproducts = document.querySelector('#list-products');
-    // clearHTML();
+    clearHTML();
 
 
     productContainer = document.querySelector('#product-container');
@@ -88,9 +87,10 @@ function showProducts() {
 
 function clearHTML() {
 
+    productContainer = document.querySelector('#product-container');
 
-    while (listproducts.firstChild) {
-        listproducts.removeChild(listproducts.firstChild);
+    while (productContainer.firstChild) {
+        productContainer.removeChild(productContainer.firstChild);
     }
 
 }
