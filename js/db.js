@@ -1,4 +1,4 @@
-const stores = [
+const products = [
     { id: 1, name: 'Tienda de Electrónica', category: 'Electrónica', rating: '5', price: 'Alto', location: 'Centro', openNow: true },
     { id: 2, name: 'Librería del Saber', category: 'Librería', rating: '4', price: 'Medio', location: 'Norte', openNow: false },
     { id: 3, name: 'Supermercado La Esquina', category: 'Supermercado', rating: '3', price: 'Bajo', location: 'Sur', openNow: true },

@@ -47,45 +47,50 @@ const dataSearch = {
 // event listeners xxx
 
 document.addEventListener('DOMContentLoaded', () => {
-    showStores();
+    showProducts();
 
 
 
-    
-   
+
+
 
 });
 
 
-function showStores(){
+function showProducts() {
     // const listproducts = document.querySelector('#list-products');
-    clearHTML();
+    // clearHTML();
 
 
-        productContainer = querySelector('#product-container');
-
-        stores.forEach(store => {
-            const { name, category, rating, price, location, openNow } = store;
-
-            productContainer.innerHTML += `
-                <div class="card">
-                    <h2>${name}</h2>
-                    <p>${category}</p>
-                    <p>${rating}</p>
-                    <p>${price}</p>
-                    <p>${location}</p>
-                    <p>${openNow}</p>
-                </div>
-            `;
-        });
+    productContainer = document.querySelector('#product-container');
+    products.forEach(store => {
+        const { id, name, category, rating, price, location, openNow } = store;
+        const storeHTML = document.createElement('div');
+        storeHTML.classList.add('store');
+        storeHTML.innerHTML = `
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title
+                ">${name}</h5>
+                <p class="card-text">${category}</p>
+                <p class="card-text">${rating}</p>
+                <p class="card-text">${price}</p>
+                <p class="card-text">${location}</p>
+                <p class="card-text">${openNow}</p>
+            </div>
+        </div>
+        `;
+        productContainer.appendChild(storeHTML);
+        
+    });
     // stores.forEach(store => {
 }
 
-function clearHTML(){
+function clearHTML() {
 
-    while(listproducts.firstChild){
+
+    while (listproducts.firstChild) {
         listproducts.removeChild(listproducts.firstChild);
     }
-    
+
 }
-console.log(brand);
