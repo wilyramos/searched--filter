@@ -6,15 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const spinner = document.querySelector('#spinner');
 
 
-    toggleButton.addEventListener('click', () => {
-        if (filterForm.style.display === 'none' || !filterForm.style.display) {
-            filterForm.style.display = 'block';
-            toggleButton.textContent = 'Ocultar Filtros';
-        } else {
-            filterForm.style.display = 'none';
-            toggleButton.textContent = 'Mostrar Filtros';
-        }
-    });
+    // toggleButton.addEventListener('click', () => {
+
+    //     if (filterForm.style.display === 'none' || !filterForm.style.display) {
+    //         filterForm.style.display = 'block';
+    //         toggleButton.textContent = 'Ocultar Filtros';
+    //     } else {
+    //         filterForm.style.display = 'none';
+    //         toggleButton.textContent = 'Mostrar Filtros';
+    //     }
+    // });
 });
 
 
@@ -46,25 +47,38 @@ const dataSearch = {
 // event listeners xxx
 
 document.addEventListener('DOMContentLoaded', () => {
-    brand.addEventListener('input', e => {
-        dataSearch.brand = e.target.value;
-    });
+    showStores();
 
-    price.addEventListener('input', e => {
-        dataSearch.price = e.target.value;
-    });
 
-    year.addEventListener('input', e => {
-        dataSearch.year = e.target.value;
-    });
+
+    
+   
 
 });
 
 
-function showProducts(){
+function showStores(){
     // const listproducts = document.querySelector('#list-products');
     clearHTML();
-    
+
+
+        productContainer = querySelector('#product-container');
+
+        stores.forEach(store => {
+            const { name, category, rating, price, location, openNow } = store;
+
+            productContainer.innerHTML += `
+                <div class="card">
+                    <h2>${name}</h2>
+                    <p>${category}</p>
+                    <p>${rating}</p>
+                    <p>${price}</p>
+                    <p>${location}</p>
+                    <p>${openNow}</p>
+                </div>
+            `;
+        });
+    // stores.forEach(store => {
 }
 
 function clearHTML(){
