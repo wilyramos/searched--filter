@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const brand = document.querySelector('#brand');
 const price = document.querySelector('#price');
-const year = document.querySelector('#rating');
+const rating = document.querySelector('#rating');
 const gender = document.querySelector('#gender');
 const type = document.querySelector('#type');
 const size = document.querySelector('#size');
@@ -41,56 +41,79 @@ const dataSearch = {
     year: '',
     gender: '',
     type: '',
-    size: ''
+    size: '',
+    rating: ''
 }
 
 // event listeners xxx
 
 document.addEventListener('DOMContentLoaded', () => {
-    showProducts();
-
-
-
-
-
-
+    showProducts(products);
 });
 
+// event listeners for the selects
 
-function showProducts() {
+rating.addEventListener('input', e => {
+    dataSearch.rating = Number(e.target.value);
+    filterProducts();
+}); 
+
+
+function filterProducts() {
+    const result = products.filter(filterRating);
+    showProducts(result);
+
+}
+
+function filterRating (product) {
+    if (dataSearch.rating) {
+        console.log(product);
+        return product.rating === dataSearch.rating;
+        
+
+    } else {
+        
+        console.log(product);
+        return product;
+    }
+
+    
+}
+
+
+
+
+function showProducts(products) {
     clearHTML();
-
-
     productContainer = document.querySelector('#product-container');
-    products.forEach(store => {
-        const { id, name, category, rating, price, location, openNow } = store;
+    products.forEach(product => {
+        const { id, name, category, rating, price, location, openNow } = product;
         const storeHTML = document.createElement('div');
-        storeHTML.classList.add('store');
+        storeHTML.classList.add('product');
         storeHTML.innerHTML = `
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title
-                ">${name}</h5>
-                <p class="card-text">${category}</p>
-                <p class="card-text">${rating}</p>
-                <p class="card-text">${price}</p>
-                <p class="card-text">${location}</p>
-                <p class="card-text">${openNow}</p>
+            <div class="product-info">
+                <p class="product-name">${name}</p>
+                <p class="product-category">${category}</p>
+                <p class="product-rating">${rating}</p>
+                <p class="product-price">${price}</p>
+                <p class="product-location">${location}</p>
+                <p class="product-openNow">${openNow}</p>
             </div>
-        </div>
+            <div class="product-actions">
+                <button class="product-edit">Editar</button>
+                <button class="product-delete">Eliminar</button>
+            </div>
+            
+        
         `;
         productContainer.appendChild(storeHTML);
-        
     });
     // stores.forEach(store => {
 }
 
 function clearHTML() {
-
     productContainer = document.querySelector('#product-container');
-
     while (productContainer.firstChild) {
         productContainer.removeChild(productContainer.firstChild);
     }
-
 }
