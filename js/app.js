@@ -66,6 +66,8 @@ function filterProducts() {
 }
 
 function filterRating (product) {
+
+    console.log(dataSearch.rating);
     if (dataSearch.rating) {
         console.log(product);
         return product.rating === dataSearch.rating;
