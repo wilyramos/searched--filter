@@ -56,21 +56,29 @@ document.addEventListener('DOMContentLoaded', () => {
 rating.addEventListener('input', e => {
     dataSearch.rating = Number(e.target.value);
     filterProducts();
+    
 }); 
 
 
 function filterProducts() {
     const result = products.filter(filterRating);
+    console.log(result);
     showProducts(result);
 
 }
 
 function filterRating (product) {
 
+    // console.log(dataSearch);
+
     console.log(dataSearch.rating);
     if (dataSearch.rating) {
         console.log(product);
-        return product.rating === dataSearch.rating;
+        if (product.rating === dataSearch.rating) {
+            console.log(product);
+            return product;
+        }
+
         
 
     } else {
