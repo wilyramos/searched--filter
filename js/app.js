@@ -36,13 +36,14 @@ const listproducts = document.querySelector('#list-products');
 // data for the search
 
 const dataSearch = {
+    id: '',
+    name: '',
     brand: '',
     price: '',
-    year: '',
+    rating: '',
     gender: '',
     type: '',
-    size: '',
-    rating: ''
+    size: ''
 }
 
 // event listeners xxx
@@ -78,7 +79,6 @@ function filterRating (product) {
             console.log(product);
             return product;
         }
-
         
 
     } else {
@@ -87,8 +87,11 @@ function filterRating (product) {
         return product;
     }
 
+
     
 }
+
+// FUNCION PARA FILTRAR POR RATING
 
 
 
@@ -97,7 +100,7 @@ function showProducts(products) {
     clearHTML();
     productContainer = document.querySelector('#product-container');
     products.forEach(product => {
-        const { id, name, category, rating, price, location, openNow } = product;
+        const { name, category, rating, price, location, openNow } = product;
         const storeHTML = document.createElement('div');
         storeHTML.classList.add('product');
         storeHTML.innerHTML = `
